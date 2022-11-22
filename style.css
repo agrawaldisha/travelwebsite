@@ -89,7 +89,10 @@ header .navbar a{
   font-size: 2rem;
   margin:0 .8rem;
 }
-
+#select-dropdown{
+  width:80%;
+  
+}
 header .navbar a:hover{
   color:var(--orange);
 }
