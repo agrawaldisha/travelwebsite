@@ -487,3 +487,22 @@ header .search-bar-container label:hover{
   color:white;
   text-decoration: underline;
 }
+.logo{
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.9));
+  font-size: 60px;
+}
+.logo {
+  position: relative;
+  animation: logo 1s infinite;
+  animation-delay: 1s;
+  
+}
+@keyframes logo {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
