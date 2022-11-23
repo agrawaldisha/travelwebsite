@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }  
+      body{
+        height:100vh;
+        display: flex;
+        border-radius: 30px;
+        justify-content: center;
+        align-items: center;
+        background: rgb(121,185,121);
+        font-family: Arial, Helvetica, sans-serif;
+         
+      }
+      .container{
+        width:500px;
+        height:400px;
+        background: white;
+        padding: 20px;
+      }
+      h2{
+        padding:20px ;
+        text-align: center;
+      }
+    .container .form{
+        margin: 30px;
+    }
+    input{
+        width:250px;
+        margin:10px;
+    }
+    .btns{
+        display: flex;
+        justify-content: center;
+    }
+    .btn{
+        width: 70px;
+        margin:10px;
+        padding:10px;
+        background-color: burlywood ;
+        border-radius:20px;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase</title>
+</head>
+<body>
+    <div class="container">
+        <h2>CRUD with Firebase</h2><hr>
+        <div class="form">
+            <form action="">
+                 Roll no.
+                 <input type="text" id="RollBox">
+                 <br>NAME.
+                 <input type="text" id="nameBox">
+                 <br>Gender
+                 <input type="text" id="GenderBox">
+                 <br>Address
+                 <input type="text" id="AddressBox">
+            <div class="btns">
+                <button class="btn">Insert</button>
+                <button class="btn">Read</button>
+                <button class="btn">Update</button>
+                <button class="btn">Delete</button>
+            </div>  
+            </form>
+        </div>
+    </div>
+    <script>
+        var rollbox=document.getElementById('RollBox')
+        var namebox=document.getElementById('nameBox')
+        var genbox=document.getElementById('GenderBox')
+        var addbox=document.getElementById('AddressBox')
+          document.querySelectorAll('.btn')[0].oncliick=insertData;
+          document.querySelectorAll('.btn')[1].oncliick=readData;
+          document.querySelectorAll('.btn')[2].oncliick=updateData;
+          document.querySelectorAll('.btn')[3].oncliick=deleteData;
+          function insertData(event)
+          {event.preventDefault();
+            readFormData() 
+            console.log("bnt clicked");
+          }
+          function readData(event)
+          {       event.preventDefault();
+            readFormData()
+            console.log("bnt clicked");
+          }
+          function updateData(event){
+          event.preventDefault();
+          readFormData()
+            console.log("bnt clicked");
+          }
+          function deleteData(event)
+          {event.preventDefault();
+            readFormData()
+            console.log("bnt clicked");
+          }
+          var rollv,namev,genderv,addressv;
+          function readFormData()
+          {
+                rollv=rollbox.value;
+                namev=namebox.value;
+                genderv=genderbox.value;
+                addressv=addbox.value;
+                console.log(rollv,namev,genderv,addressv);
+          }
+          
+</script>
+</body>
+</html>
