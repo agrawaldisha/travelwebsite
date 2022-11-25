@@ -99,3 +99,52 @@ function clearFormData()
     subBox.value="";
     msgBox.value="";
 }
+
+
+
+//book now
+var pl,ng,di,dout;
+function readf(){
+    pl=document.getElementById("drop1").value;
+    ng=document.getElementById("guests").value;
+    di=document.getElementById("datein").value;
+    dout=document.getElementById("dateout").value;
+    console.log(pl+" "+ng+" "+di+" "+dout);
+}
+document.getElementById("f2").addEventListener("submit",send);
+function send(e){
+    e.preventDefault();
+    readf();
+
+    set(ref(db,"book/" + di),{
+        place:pl,
+        guests:ng,
+        DateIn:di,
+        Dateout:dout,
+    }).then(()=>{
+        alert("booking done")
+    }).catch((error)=>{
+        alert("Unsuccessful",error);
+    });
+
+    clearFormData();
+}
+
+
+//search
+var vl;
+document.getElementById("drop2").addEventListener("change",ch);
+function ch(){
+    // console.log(document.getElementById("drop2"));
+    vl=document.getElementById("drop2").value;
+    console.log(vl);
+    if(vl==1)window.location.href="#leh";
+    if(vl==2)window.location.href="#jaipur";
+    if(vl==3)window.location.href="#kerela";
+    if(vl==4)window.location.href="#sikkim";
+    if(vl==5)window.location.href="#mumbai";
+    if(vl==6)window.location.href="#kullu";
+    if(vl==7)window.location.href="#vrindavan";
+    if(vl==8)window.location.href="#lakshdeep";
+    if(vl==9)window.location.href="#goa";
+}
